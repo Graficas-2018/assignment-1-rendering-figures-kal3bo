@@ -171,26 +171,41 @@ function draw(gl, obj)
 }
 
 // TO DO: Create functions needed to generate the vertex data for the different figures.
-function createSquare(gl) 
-{
-    var square = {};
-    return square;
+function createSquare(gl){
+    var vertexBuffer;
+	vertexBuffer = gl.createBuffer();
+	gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
+	var verts = [.5,  .5,  0.0, -.5,  .5,  0.0, .5, -.5,  0.0, -.5, -.5,  0.0];
+	gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(verts), gl.STATIC_DRAW);
+	var square = {buffer:vertexBuffer, vertSize:3, nVerts:4, primtype:gl.TRIANGLE_STRIP};
+	return square;
 }
 
-function createTriangle(gl)
-{
-    var triangle = {};
-    return triangle;
+function createTriangle(gl){
+    var vertexBuffer;
+	vertexBuffer = gl.createBuffer();
+	gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
+	var verts = [0.0, 0.5, 0.0, .5, -.5,  0.0, -.5, -.5,  0.0];
+	gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(verts), gl.STATIC_DRAW);
+
+	var triangle = {buffer:vertexBuffer, vertSize:3, nVerts:3, primtype:gl.TRIANGLES};
+	return triangle;
+}
 }
 
-function createRhombus(gl)
-{
-    var rhombus = {};
-    return rhombus;
+function createRhombus(gl){
+    var vertexBuffer;
+	vertexBuffer = gl.createBuffer();
+	gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
+	var verts = [0.0,  .5,  0.0, -.5,  0.0,  0.0, .5, 0.0,  0.0, 0.0, -.5,  0.0];
+	gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(verts), gl.STATIC_DRAW);
+	var square = {buffer:vertexBuffer, vertSize:3, nVerts:4, primtype:gl.TRIANGLE_STRIP};
+	return square;
 }
 
 function createSphere(gl, radius)
 {
+	//No supe hacer el Pacman :'v
     var sphere = {};
     return sphere;
-}        
+} 

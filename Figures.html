@@ -28,6 +28,22 @@
                 var rhombus = createRhombus(gl);
                 
                 // TO DO: Transform the different figure's positions, and draw them.
+				// Cuadrado:
+				mat4.identity(modelVIewMatrix);
+				mat4.translate(modelVIewMatrix,  modelVIewMatrix, [-1.5, 0.6, -3.0]);
+				draw(gl, square);
+				// Triángulo:
+				mat4.identity(modelVIewMatrix);
+				mat4.translate(modelVIewMatrix, modelVIewMatrix, [1.5, 0.6, -3.0]);
+				draw(gl, triangle);
+				// Rombo:
+				mat4.identity(modelVIewMatrix);
+				mat4.translate(modelVIewMatrix, modelVIewMatrix, [-1.5, -0.6, -3.0]);
+				draw(gl, rhombus);
+				//Pacman:
+				mat4.identity(modelVIewMatrix);
+				mat4.translate(modelVIewMatrix, modelVIewMatrix, [1.5, -0.6, -3.0]);
+				draw(gl, sphere);
                 
 			}
 	);
