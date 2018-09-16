@@ -191,7 +191,7 @@ function createTriangle(gl){
 	var triangle = {buffer:vertexBuffer, vertSize:3, nVerts:3, primtype:gl.TRIANGLES};
 	return triangle;
 }
-}
+
 
 function createRhombus(gl){
     var vertexBuffer;
